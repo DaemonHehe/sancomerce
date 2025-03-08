@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaSearch, FaShoppingCart } from "react-icons/fa";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import MenuTabs from "./MenuTabs";
 
@@ -41,6 +41,24 @@ const Header = () => {
                 <MenuTabs />
               </div>
             </div>
+          </div>
+          <Link
+            href={"/offers"}
+            className={`py-4 font-bold text-xl ${
+              pathname === "/offers" ? "text-[#f76411]" : "text-black"
+            }`}
+          >
+            Offers
+          </Link>
+        </div>
+        <div className="flex items-center space-x-6">
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Search for products"
+              className="pl-10 pr-4 py-2 border text-black bg-gray-100 rounded-full focus:outline-none"
+            />
+            <FaSearch className="absolute left-3 top-1/2 text-gray-400 transform -translate-y-1/2" />
           </div>
         </div>
       </div>
